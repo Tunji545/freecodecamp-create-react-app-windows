@@ -2,16 +2,8 @@ import React from "react";
 
 function Header() {
 
-  return(
-    <div>
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>Portfolio</li>
-          <li>About</li>
-        </ul>
-      </nav>
-    </div>
+  return (
+    <header className="nav">This is of the nav section</header>
   )
 }
 

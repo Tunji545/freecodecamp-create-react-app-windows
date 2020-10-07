@@ -3,11 +3,9 @@ import React from "react";
 function Footer() {
 
   return (
-    <div>
-      <footer>
-        <p>This is the footer section of the page</p>
-      </footer>
-    </div>
+    <footer>
+      This is the footer section of the site.
+    </footer>
   )
 }
 
