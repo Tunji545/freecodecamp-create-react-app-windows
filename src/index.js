@@ -1,13 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./index.css";
 
-ReactDOM.render(
-  <div>
-    <ul>
-      <li>This</li>
-      <li>is</li>
-      <li>a</li>
-      <li>sentence</li>
-    </ul>
-  </div>, document.getElementById("root")
-)
+function MyInfo() {
+
+  return (
+    <div>
+      <h1>My name is Olatunji Omisakin</h1>
+      <p>I am a enthusiastic programmer</p>
+      <ul>
+        <li>Jerusalem</li>
+        <li>Silicon Valley</li>
+        <li>USA White House</li>
+      </ul>
+    </div>
+  )
+
+}
+
+ReactDOM.render(<MyInfo />, document.getElementById("root"))
