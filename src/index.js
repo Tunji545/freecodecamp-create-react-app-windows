@@ -2,21 +2,27 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 function App() {
-
-  const date = new Date( );
+  const date = new Date(2020, 8, 10, 20);
   const hour = date.getHours();
-  let time;
+  let timeOfDay;
+  let styles = {
+        fontSize: "30px",
+      }
   if (hour < 12) {
-    time = "Morning!";
+    timeOfDay = "Morning!";
+    styles.color = "#04756f"
   }
   else if (hour > 12 && hour < 17) {
-    time = "Afternoon!";
+    timeOfDay = "Afternoon!";
+    styles.color = "#8914a3"
   }
   else {
-    time = "Night!";
+    timeOfDay = "Night!";
+    styles.color = "#d90000"
   }
+
   return (
-    <h1>Good { time } The time is { hour % 12 } o'clock.</h1>
+    <h1 style={styles}>Good { timeOfDay }</h1>
   )
 }
 
