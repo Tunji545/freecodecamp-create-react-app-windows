@@ -1,16 +1,15 @@
 import React from "react";
-import Header from "./components/Header";
-import MainContainer from "./components/MainContainer";
-import Footer from "./components/Footer";
+import TodoItem from "./components/TodoItem";
 import "./index.css";
 
 function App() {
 
-  return(
-    <div>
-      <Header />
-      <MainContainer />
-      <Footer />
+  return (
+    <div className="todo-list">
+      <TodoItem />
+      <TodoItem />
+      <TodoItem />
+      <TodoItem />
     </div>
   )
 }
