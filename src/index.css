@@ -1,7 +1,8 @@
 body {
   background-color: whitesmoke;
 }
-.todo-list {
+.todo-list,
+.contact-card {
  background-color: white;
  margin: auto;
  width: 50%;
