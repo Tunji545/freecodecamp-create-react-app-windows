@@ -1,6 +1,11 @@
 body {
   background-color: whitesmoke;
 }
+
+.jokes {
+  background: #222;
+  color: floralwhite;
+}
 .todo-list,
 .contact-card {
  background-color: white;

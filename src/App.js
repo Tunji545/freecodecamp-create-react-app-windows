@@ -1,16 +1,15 @@
 import React from "react";
-import "./index.css";
-import ContactCard from "./ContactCard";
-
+import Jokes from "./components/Jokes";
+import "./index.css"
 
 function App() {
 
-  return(
-    <div className="contacts">
-      <ContactCard contact={{imgurl: "{require('./images/bible.jpg')}", alt: "Bible" , name: "The Bible", phone: "07012345678", email: "bible@bible.com"}} />
-      <ContactCard contact={{imgurl: "{require('./images/at-icon.jpg')}", alt: "Email", name: "Email Logo", phone: "08012345678", email: "email@email.com"}} />
-      <ContactCard contact={{imgurl: "{require('./images/facebook-icon.png')}", alt: "Facebook", name: "Facebook logo", phone: "08112345678", email: "facebook@facebook.com"}} />
-      <ContactCard contact={{imgurl: "{require('./images/twitter-icon.png')}", alt: "Twitter", name: "Twitter Logo", phone: "0901234567", email: "twitter@twitter.com"}} />
+  return (
+    <div className="jokes">
+      <Jokes joke={{Question: "What is puns?", Punchln: "It is add to explain puns  to kleptomaniac because they always take things literally."}} />
+      <Jokes joke={{Question: "Why are hyenas dangerous?", Punchln: "Hyenas are dangerous because you don't know when they are angry, always lauging!"}} />
+      <Jokes joke={{Question: "How do I know I exist?", Punchln: "And who shall I say is asking?"}} />
+      <Jokes joke={{Punchln: "It is sheer arrogance to contract illness that is beyond your means."}} />
     </div>
   )
 }
