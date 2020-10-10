@@ -1,15 +1,13 @@
 import React from "react";
 import Jokes from "./components/Jokes";
-import "./index.css"
+import jokesData from "./components/jokesData";
+import "./index.css";
 
 function App() {
-
+  const JokeComponent = jokesData.map(joke => <Jokes key={joke.id} Question={joke.Question} Punchln={joke.Punchln}/>)
   return (
-    <div className="jokes">
-      <Jokes joke={{Question: "What is puns?", Punchln: "It is add to explain puns  to kleptomaniac because they always take things literally."}} />
-      <Jokes joke={{Question: "Why are hyenas dangerous?", Punchln: "Hyenas are dangerous because you don't know when they are angry, always lauging!"}} />
-      <Jokes joke={{Question: "How do I know I exist?", Punchln: "And who shall I say is asking?"}} />
-      <Jokes joke={{Punchln: "It is sheer arrogance to contract illness that is beyond your means."}} />
+    <div>
+      {JokeComponent}
     </div>
   )
 }
