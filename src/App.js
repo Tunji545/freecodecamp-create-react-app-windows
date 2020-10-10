@@ -1,13 +1,12 @@
 import React from "react";
-import Jokes from "./components/Jokes";
-import jokesData from "./components/jokesData";
-import "./index.css";
+import Products from "./components/Products";
+import vschoolProduct from "./components/vschoolProduct";
 
 function App() {
-  const JokeComponent = jokesData.map(joke => <Jokes key={joke.id} Question={joke.Question} Punchln={joke.Punchln}/>)
+  const ProductComponent = vschoolProduct.map(product =>  <Products key={product.id} item={product} />)
   return (
     <div>
-      {JokeComponent}
+      {ProductComponent}
     </div>
   )
 }
