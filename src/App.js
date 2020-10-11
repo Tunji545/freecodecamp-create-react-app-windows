@@ -1,20 +1,49 @@
 import React from "react";
 
-// function App(props) {
-
-//   return (
-//     <h2>{props.whatever}</h2>
-//   )
-// }
-
 class App extends React.Component {
-  yourMethodHere() {
 
+  render() {
+
+    return(
+
+      <div>
+        <Heading username="vschool"/>
+        <Greeting />
+      </div>
+    )
   }
+}
+
+class Heading extends React.Component {
+
   render() {
 
     return (
-      <h2>{this.props.whatever}</h2>
+      <h3>Welcome {this.props.username}!</h3>
+    )
+  }
+}
+
+class Greeting extends React.Component {
+
+  render() {
+    const date = new Date();
+    const hour = date.getHours();
+    let timeOfDay;
+    if (hour < 12) {
+      timeOfDay = "Good Morning!";
+    }
+    else if (hour > 12 && hour < 17) {
+      timeOfDay = "Good Afternoon!";
+    }
+    else {
+      timeOfDay = "Good Night!"
+    }
+
+    return (
+      <div>
+        <h2>{timeOfDay} to you sir or ma.</h2>
+      </div>
     )
   }
 }
