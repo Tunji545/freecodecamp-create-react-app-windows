@@ -1,23 +1,20 @@
 import React from "react";
+import todoData from "./components/todoData";
+import TodoItem from "./components/TodoItem";
+import "./index.css";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      isLoggedIn: "Yes"
+      todoItem: todoData 
     }
   }
   render() {
-    let wordDisplay;
-    if(this.state.isLoggedIn === "Yes") {
-      wordDisplay = "yes";
-    }
-    else {
-      wordDisplay = "no";
-    }
-    return(
-      <div>
-        <h1>You are currently logged in {wordDisplay}</h1>
+    const TodoComponent = this.state.todoItem.map(todo => <TodoItem key={todo.id} todos={todo} />);
+    return (
+      <div className="todo-list">
+        {TodoComponent}
       </div>
     )
   }
