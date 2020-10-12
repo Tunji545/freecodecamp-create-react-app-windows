@@ -1,28 +1,19 @@
 import React from "react";
 
-class App extends React.Component {
+class  App extends React.Component {
   constructor() {
     super();
     this.state = {
-      answer: "Yes"
+      name: "Omisakin Olatunji",
+      age: 29
     }
   }
-
   render() {
-    return (
+    return(
       <div>
-        <h2>Is state really important? {this.state.answer}</h2>
-        <ChildComponent answer={this.state.answer} />
+        <h1>{this.state.name}</h1>
+        <h3>{this.state.age} years old.</h3>
       </div>
-    )
-  }
-}
-
-class ChildComponent extends React.Component {
-
-  render() {
-    return (
-      <p>{this.props.answer}</p>
     )
   }
 }
