@@ -1,21 +1,30 @@
 import React from "react";
-import todoData from "./components/todoData";
-import TodoItem from "./components/TodoItem";
 import "./index.css";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todoItem: todoData
+      count: 0
     }
+    this.handleClick = this.handleClick.bind(this);
   }
 
+  handleClick() {
+    // this.setState({count: 1}); When Previous State is not cared for.
+
+    // When Previous state is cared for
+    this.setState(prevState => {
+      return {
+        count: prevState.count + 1
+      }
+    })
+  }
   render() {
-    const TodoComponent = this.state.todoItem.map(todo => <TodoItem key={todo.id} todos={todo} />) 
     return (
-      <div className="todo-list">
-        {TodoComponent}
+      <div className="arrange">
+        <h1>{this.state.count}</h1>
+        <button onClick={this.handleClick}>Count!</button>
       </div>
     )
   }
