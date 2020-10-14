@@ -1,0 +1,5 @@
+[1013/160841.072:ERROR:process_reader_win.cc(127)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1013/160841.103:ERROR:exception_snapshot_win.cc(100)] thread ID 4372 not found in process
+[1013/160841.103:ERROR:process_memory_win.cc(73)] ReadMemory at 0x4f20dfe600 of 16 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[1013/160841.103:ERROR:exception_snapshot_win.cc(211)] EXCEPTION_POINTERS read failed
+[1013/160841.103:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
