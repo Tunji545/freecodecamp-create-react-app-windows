@@ -1,34 +1,37 @@
 import React from "react";
-import todoData from "./components/todoData";
-import TodoItem from "./components/TodoItem";
-import "./index.css";
+
+// https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1
+// https://reactjs.org/blog/2018/03/29/react-v-16-3.html#component-lifecycle-changes
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {
-      todos: todoData
+  }
+
+  componentDidMount() {
+    // GET thedata I need to correctly display.
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.whatever !== this.props.whatever) {
+      // do something important here.
     }
-    this.handleChange = this.handleChange.bind(this);
   }
-  handleChange(id) {
-    this.setState(prevState => {
-      const UpdatedTodos = prevState.todos.map(todo => {
-        if(todo.id === id) {
-          todo.completed = !todo.completed;
-        }
-        return todo;
-      })
-      return {
-        todos: UpdatedTodos
-      }
-    })
+
+  shouldComponentUpdate(nextProps, nextState) {
+    // return ture if you want it to update.
+    // return false if not.
   }
+
+  componentWillUnmount() {
+    // teardowm or clean up your code before your component disappear.
+    // (E.g remove event listeners.)
+  }
+
   render() {
-    const TodoComponent = this.state.todos.map(todo => <TodoItem key={todo.id} todos={todo} handleChange={this.handleChange}/>)
     return (
-      <div className="todo-list">
-        {TodoComponent}
+      <div>
+
       </div>
     )
   }
