@@ -1,29 +1,26 @@
-import React, { Component } from "react";
-import Conditional from "./components/Conditional";
+import React from "react";
 
-class App extends Component {
+class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      isLoading: true
+      unreadMessage: [
+        "Call Mum",
+        "New spam email available, all links safe to click."
+      ]
     }
   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        isLoading: false
-      })
-    }, 1500)
-  }
-
+  // &&
+  // true && false - 
+  // if (truthy i.e. left side = true, then right side gets rendered.if not, nothing gets rendered)
+  // if(falsy i.e. left side = false, then nothing gets rendered even if the right side is true.)
   render() {
-    return (
+    return(
       <div>
-        {this.state.isLoading
-        ? <h1>Loading ...</h1>
-        : <Conditional />}
-        
+        {/* {this.state.unreadMessage.length > 0 ? <h1>You have {this.state.unreadMessage.length} unread Messages</h1>
+        : null} */}
+        {this.state.unreadMessage.length > 0 && <h1>You have {this.state.unreadMessage.length} unread Messages</h1>}
       </div>
     )
   }
