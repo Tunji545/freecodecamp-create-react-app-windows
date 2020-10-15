@@ -7,3 +7,4 @@
 [1015/131438.027:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Tunji545\AppData\Local\Microsoft\Edge\User Data\Crashpad\attachments\9925a8ea-0cab-4718-be66-db5d1a88bb46: The system cannot find the path specified. (0x3)
 [1015/131438.028:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
 [1015/162133.840:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1015/210444.753:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)

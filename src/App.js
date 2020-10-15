@@ -1,29 +1,35 @@
 import React from "react";
+import todoData from  "./components/todoData";
+import TodoItem from "./components/TodoItem";
+import "./index.css";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      isLoggedIn: false
+      todoItem: todoData
     }
-    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleClick() {
+  handleChange(id) {
     this.setState(prevState => {
+      const updatedState = prevState.todoItem.map(toDo => {
+        if (id === toDo.id) {
+          toDo.completed = !toDo.completed
+        }
+        return toDo;
+      })
       return {
-        isLoggedIn: !prevState.isLoggedIn
+        todoItem: updatedState
       }
     })
   }
-
   render() {
-    let buttonText = this.state.isLoggedIn ? "LOG OUT" : "LOG IN"
-    let displayText = this.state.isLoggedIn ? "Logged in" : "Logged out"
+    const TodoComponent = this.state.todoItem.map(todo => <TodoItem key={todo.id} todos={todo} handleChange={this.handleChange}/>)
     return (
       <div>
-        <button onClick={this.handleClick}>{buttonText}</button>
-        <h1>{displayText}</h1>
+        {TodoComponent}
       </div>
     )
   }
