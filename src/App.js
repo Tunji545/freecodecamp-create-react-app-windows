@@ -1,35 +1,31 @@
 import React from "react";
-import todoData from  "./components/todoData";
-import TodoItem from "./components/TodoItem";
-import "./index.css";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todoItem: todoData
+      loading: false,
+      character: {}
     }
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(id) {
-    this.setState(prevState => {
-      const updatedState = prevState.todoItem.map(toDo => {
-        if (id === toDo.id) {
-          toDo.completed = !toDo.completed
-        }
-        return toDo;
+  componentDidMount() {
+    this.setState({loading: true})
+    fetch("https://cors-anywhere.herokuapp.com/https://swapi.dev/api/people/1")
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          loading: false,
+          character: data
+        })
       })
-      return {
-        todoItem: updatedState
-      }
-    })
   }
+
   render() {
-    const TodoComponent = this.state.todoItem.map(todo => <TodoItem key={todo.id} todos={todo} handleChange={this.handleChange}/>)
+    const text = this.state.loading ? <h1>Loading...</h1> : this.state.character.name
     return (
       <div>
-        {TodoComponent}
+        <h1>{text}</h1>
       </div>
     )
   }
